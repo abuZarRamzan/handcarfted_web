@@ -280,3 +280,252 @@ Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 3221
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8060893366102232355)[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-04-30 17:18:37 +0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.4ms | Allocations: 473)
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3218)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8060893366102232355)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20250501103750)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (49.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" character varying, "locked_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_unlock_token" ON "users" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20250501103750"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8060893366102232355)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-05-01 16:06:28 +0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant HomeController
+
+        Object.const_get(camel_cased_word)
+              ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for ::1 at 2025-05-01 16:08:26 +0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.3ms | Allocations: 472)
+Completed 200 OK in 16ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 3224)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-05-01 16:08:52 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 279)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 618)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 28.5ms | Allocations: 7907)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:16:in `<module:LoggerThreadSafeLevel>': uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger (NameError)
+
+    Logger::Severity.constants.each do |severity|
+    ^^^^^^
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:9:in `<module:ActiveSupport>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:8:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/webpacker-5.4.4/lib/webpacker.rb:3:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/webpacker-5.4.4/lib/webpacker.rb:3:in `<top (required)>'
+	from ./bin/webpack:12:in `require'
+	from ./bin/webpack:12:in `<main>'
+
+  Rendered layout layouts/application.html.erb (Duration: 496.2ms | Allocations: 20151)
+Completed 500 Internal Server Error in 526ms (ActiveRecord: 4.3ms | Allocations: 33251)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/dev/Documents/firstproject/handcrafted_goods/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2025-05-01 16:38:51 +0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 297)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 618)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 5567)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:16:in `<module:LoggerThreadSafeLevel>': uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger (NameError)
+
+    Logger::Severity.constants.each do |severity|
+    ^^^^^^
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:9:in `<module:ActiveSupport>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:8:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/webpacker-5.4.4/lib/webpacker.rb:3:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/webpacker-5.4.4/lib/webpacker.rb:3:in `<top (required)>'
+	from ./bin/webpack:12:in `require'
+	from ./bin/webpack:12:in `<main>'
+
+  Rendered layout layouts/application.html.erb (Duration: 386.0ms | Allocations: 12968)
+Completed 500 Internal Server Error in 417ms (ActiveRecord: 5.1ms | Allocations: 27638)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/dev/Documents/firstproject/handcrafted_goods/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2025-05-01 16:39:26 +0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 297)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 618)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 5565)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:16:in `<module:LoggerThreadSafeLevel>': uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger (NameError)
+
+    Logger::Severity.constants.each do |severity|
+    ^^^^^^
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:9:in `<module:ActiveSupport>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:8:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/webpacker-5.4.4/lib/webpacker.rb:3:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/webpacker-5.4.4/lib/webpacker.rb:3:in `<top (required)>'
+	from ./bin/webpack:12:in `require'
+	from ./bin/webpack:12:in `<main>'
+
+  Rendered layout layouts/application.html.erb (Duration: 394.1ms | Allocations: 12970)
+Completed 500 Internal Server Error in 425ms (ActiveRecord: 4.6ms | Allocations: 27644)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/dev/Documents/firstproject/handcrafted_goods/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2025-05-01 17:01:51 +0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 297)
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 618)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 30.8ms | Allocations: 8294)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:16:in `<module:LoggerThreadSafeLevel>': uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger (NameError)
+
+    Logger::Severity.constants.each do |severity|
+    ^^^^^^
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:9:in `<module:ActiveSupport>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:8:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `<top (required)>'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/webpacker-5.4.4/lib/webpacker.rb:3:in `require'
+	from /Users/dev/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/webpacker-5.4.4/lib/webpacker.rb:3:in `<top (required)>'
+	from ./bin/webpack:12:in `require'
+	from ./bin/webpack:12:in `<main>'
+
+  Rendered layout layouts/application.html.erb (Duration: 439.5ms | Allocations: 20980)
+Completed 500 Internal Server Error in 482ms (ActiveRecord: 4.8ms | Allocations: 36420)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/dev/Documents/firstproject/handcrafted_goods/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2025-05-01 17:17:31 +0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 297)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 618)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 28.0ms | Allocations: 8294)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.9ms | Allocations: 19076)
+Completed 200 OK in 109ms (Views: 70.8ms | ActiveRecord: 5.6ms | Allocations: 34561)
+
+
