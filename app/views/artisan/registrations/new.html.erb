@@ -1,0 +1,45 @@
+<div class="form-container">
+  <div class="form-wrap">
+    <h2 class="head-form">Artisan Sign up</h2>
+
+    <%= form_for(resource, as: :user, url: create_artisan_registration_path) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="mb-3">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control", autofocus: true %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :shop_name %>
+        <%= f.text_field :shop_name, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :shop_description %>
+        <%= f.text_area :shop_description, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :shop_address %>
+        <%= f.text_field :shop_address, class: "form-control" %>
+      </div>
+
+      <div class="d-grid">
+        <%= f.submit "Sign up as Artisan" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

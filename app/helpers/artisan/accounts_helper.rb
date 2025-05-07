@@ -1,0 +1,2 @@
+module Artisan::AccountsHelper
+end

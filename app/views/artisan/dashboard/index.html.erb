@@ -1,0 +1,18 @@
+<div class="artisan-dashboard">
+  <h1>Your Artisan Dashboard</h1>
+
+  <h2>Shop Details</h2>
+  <div class="card">
+    <div class="card-body">
+      <h3>Shop Name</h3>
+      <p><%= @shop.shop_name %></p>
+      <h4>Shop Description</h4>
+      <p><%= @shop.shop_description %></p>
+       <h4>Shop Address</h4>
+      <address><%= @shop.shop_address %></address>
+      <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+
+  <%= link_to "Manage Products", artisan_products_path %>
+</div>

@@ -1,0 +1,30 @@
+<%= form_with(model: [:artisan, @product], local: true) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category_list, "Categories" %>
+    <%= f.select :category_list, options_for_select(['Jewelry', 'Pottery', 'Textiles']) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control', rows: 4 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.number_field :price, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', artisan_products_path, class: 'btn btn-link' %>
+  </div>
+<% end %>

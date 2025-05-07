@@ -1,0 +1,14 @@
+<h1>Your Products</h1>
+
+<%= link_to "Add Product", new_artisan_product_path %>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+    <%= image_tag product.photo.variant(resize_to_limit: [300, 300]) if product.photo.attached? %>
+      <%= product.title %> - $<%= product.price %>
+      <%= link_to "Edit", edit_artisan_product_path(product) %> |
+      <%= link_to "Delete", artisan_product_path(product), method: :delete %>
+    </li>
+  <% end %>
+</ul>
