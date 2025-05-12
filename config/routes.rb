@@ -10,8 +10,14 @@ Rails.application.routes.draw do
     get    'artisan/sign_in',  to: 'artisan/sessions#new',     as: :new_artisan_session
     post   'artisan/sign_in',  to: 'artisan/sessions#create',  as: :artisan_session
     delete 'artisan/sign_out', to: 'artisan/sessions#destroy', as: :destroy_artisan_session
-   
+
   end
+
+  resources :products, only: [:show]
+  resource :cart, only: [:show]
+  resources :cart_items, only: [:create, :update, :destroy]
+  resources :orders, only: [:new,:index, :create, :show]
+
   authenticated :user do
     namespace :buyer do
       root to: 'dashboard#index', as: :root

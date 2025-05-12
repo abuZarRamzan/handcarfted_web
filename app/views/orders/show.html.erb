@@ -1,0 +1,28 @@
+<h1>Order Summary</h1>
+<p><strong>Total:</strong> $<%= @order.total_price %></p>
+<p><strong>Order Time:</strong><%= @order.created_at.strftime("%b %d, %Y") %></p>
+<h2>Items:</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product image</th>
+      <th>Product title</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_items.each do |item| %>
+      <tr>
+        <td><%= image_tag item.product.photo.variant(resize_to_limit: [60, 60]), class: "rounded me-3", alt: item.product.title %></td>
+        <td><%= item.product.title %></td>
+        <td><%= item.quantity %></td>
+        <td>$<%= item.price %></td>
+        <td>$<%= item.price * item.quantity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Back to Shop", root_path, class: "btn btn-primary" %>

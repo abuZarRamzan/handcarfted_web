@@ -1,0 +1,31 @@
+<h1>Checkout</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product image</th>
+      <th>Product title</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart.cart_items.each do |item| %>
+      <tr>
+        <td><%= image_tag item.product.photo.variant(resize_to_limit: [60, 60]), class: "rounded me-3", alt: item.product.title %></td>
+        <td><%= item.product.title %></td>
+        <td><%= item.quantity %></td>
+        <td>$<%= item.product.price %></td>
+        <td>$<%= item.quantity * item.product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><strong>Total: </strong>
+  $<%= @cart.cart_items.sum { |item| item.quantity * item.product.price } %>
+</p>
+
+<%= form_with url: orders_path, method: :post do %>
+  <%= submit_tag "Confirm Order", class: "btn btn-primary" %>
+<% end %>

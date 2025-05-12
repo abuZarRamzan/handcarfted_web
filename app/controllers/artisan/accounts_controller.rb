@@ -4,7 +4,7 @@ class Artisan::AccountsController < ApplicationController
   def edit
     @artisan = current_user
   end
-  
+
   def update
     @artisan = current_user
     if @artisan.update(artisan_params)

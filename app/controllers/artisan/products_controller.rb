@@ -42,7 +42,7 @@ class Artisan::ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:title, :description, :price, :photo, :category_list)
   end
-  
+
   def ensure_artisan
     redirect_to root_path, alert: "Access denied" unless current_user.artisan?
   end

@@ -1,12 +1,17 @@
-
-<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-<%= link_to "Sign up as Artisan", new_artisan_registration_path %>
-<ul>
-<h1>Artist Products</h1>
+<div class="row">
   <% @products.each do |product| %>
-    <li>
-    <%= image_tag product.photo.variant(resize_to_limit: [300, 300]) if product.photo.attached? %>
-      <%= product.title %> - $<%= product.price %>
-    </li>
+    <div class="col-md-3 mb-4">
+       <%= link_to product_path(product), class: "text-decoration-none text-dark" do %>
+        <div class="card h-100">
+          <% if product.photo.attached? %>
+            <%= image_tag product.photo.variant(resize_to_limit: [300, 300]) %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= product.title %></h5>
+            <p class="card-text">$<%= product.price %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-</ul>
+</div>
